@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Authentication Example</title>
+    </head>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+      <script>
+        async function signup() {
+            const username = document.getElementById("signup-username").value;
+            const password = document.getElementById("signup-password").value;
+
+            await axios.post("http://localhost:3000/signup", {//this is a promises which we hndly with async await
+                username: username,
+                password: password
+            });
+            alert("You are signed in");
+        }
+        </script>
+    <body>
+        <div>
+        
+         Signup
+            <input id="signup-username" type="text" name="username" placeholder="Username">
+            <input id="signup-password" type="password" name="password" placeholder="Password">
+            <button onclick="signup()">Submit</button>
+        </div>
+         <div>
+        singin
+        <intput type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="signin()">Submit</button>
+        </div>
+        <div>
+            user information 
+            <div id="information"></div>
+        </div>
+        <div>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </body>
+</html>
